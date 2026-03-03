@@ -1,4 +1,5 @@
 export {aesHelper} from "./aes.helper.js";
+export {correlationIdHelper} from "./correlation-id.helper.js";
 export {desHelper} from "./des.helper.js";
 export {md5Helper} from "./md5.helper.js";
 export {sha1Helper} from "./sha1.helper.js";
