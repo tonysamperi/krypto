@@ -17,6 +17,7 @@ export {EVPKDF, PBKDF2} from "./kdf/index.js";
 //
 export {
     aesHelper,
+    correlationIdHelper,
     desHelper,
     md5Helper,
     sha1Helper,

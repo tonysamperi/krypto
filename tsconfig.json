@@ -1,31 +1,32 @@
 {
-    "include": [
-        "src"
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "test",
+    "src/crypto-js.ts"
+  ],
+  "compilerOptions": {
+    "module": "CommonJS",
+    "target": "es6",
+    "lib": [
+      "esnext",
+      "dom"
     ],
-    "exclude": [
-        "test",
-        "src/crypto-js.ts"
-    ],
-    "compilerOptions": {
-        "module": "CommonJS",
-        "target": "es6",
-        "lib": [
-            "esnext"
-        ],
-        "allowJs": true,
-        "importHelpers": false,
-        "declaration": true,
-        "sourceMap": true,
-        "rootDir": "./src",
-        "baseUrl": "./",
-        "strict": true,
-        "noUnusedLocals": true,
-        "noUnusedParameters": true,
-        "noImplicitReturns": true,
-        "strictNullChecks": false,
-        "skipLibCheck": true,
-        "moduleResolution": "node",
-        "esModuleInterop": true,
-        "outDir": "dist"
-    }
+    "allowJs": true,
+    "importHelpers": false,
+    "declaration": true,
+    "sourceMap": true,
+    "rootDir": "./src",
+    "baseUrl": "./",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "strictNullChecks": false,
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "outDir": "dist"
+  }
 }
