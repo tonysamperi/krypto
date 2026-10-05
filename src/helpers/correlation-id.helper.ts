@@ -1,11 +1,29 @@
+const idBytes = 8;
+const poolSize = 4096;
+
+let pool: Uint8Array<ArrayBuffer> | null = null;
+let poolOffset = 0;
+
+function nextRandomBytes(cryptoObj: Crypto): Uint8Array {
+    if (!pool || poolOffset + idBytes > pool.length) {
+        pool = new Uint8Array(new ArrayBuffer(poolSize));
+        cryptoObj.getRandomValues(pool);
+        poolOffset = 0;
+    }
+
+    const bytes = pool.subarray(poolOffset, poolOffset + idBytes);
+    poolOffset += idBytes;
+
+    return bytes;
+}
+
 export const correlationIdHelper = function (): string {
     const now = Date.now().toString(36);
 
     const cryptoObj = globalThis.crypto;
 
     if (cryptoObj?.getRandomValues) {
-        const arr = new Uint8Array(8);
-        cryptoObj.getRandomValues(arr);
+        const arr = nextRandomBytes(cryptoObj);
 
         let rand = "";
         // eslint-disable-next-line @typescript-eslint/prefer-for-of

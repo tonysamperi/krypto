@@ -36,7 +36,7 @@ export class Utf8 implements AbstractEncoder {
         }
         catch (e) {
             console.error("Malformed UTF-8 data", e);
-            throw new Error("Malformed UTF-8 data");
+            throw new Error("Malformed UTF-8 data", {cause: e});
         }
     }
 

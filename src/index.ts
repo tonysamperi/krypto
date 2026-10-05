@@ -23,7 +23,8 @@ export {
     sha1Helper,
     sha256Helper,
     sha512Helper,
-    tripleDesHelper
+    tripleDesHelper,
+    uuidV4Helper
 } from "./helpers/index.js";
 //
 export {CBC, CTR, ECB} from "./mode/index.js";

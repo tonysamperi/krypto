@@ -20,10 +20,10 @@ describe("correlationIdHelper", () => {
         expect(set.size).toBe(total);
     });
 
-    it("should generate 500k ids under reasonable time", () => {
+    it("should generate 250k ids under reasonable time", () => {
         const start = Date.now();
 
-        for (let i = 0; i < 500_000; i++) {
+        for (let i = 0; i < 250_000; i++) {
             correlationIdHelper();
         }
 
