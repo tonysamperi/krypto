@@ -222,7 +222,7 @@ export class AES extends BlockCipher {
         const t2g = ((sbox[s2 >>> 24] << 24) | (sbox[(s3 >>> 16) & 0xff] << 16) | (sbox[(s0 >>> 8) & 0xff] << 8) | sbox[s1 & 0xff]) ^
             keySchedule[ksRow++];
         const t3g = ((sbox[s3 >>> 24] << 24) | (sbox[(s0 >>> 16) & 0xff] << 16) | (sbox[(s1 >>> 8) & 0xff] << 8) | sbox[s2 & 0xff]) ^
-            keySchedule[ksRow++];
+            keySchedule[ksRow];
 
         // Set output
         m[offset] = t0g;
